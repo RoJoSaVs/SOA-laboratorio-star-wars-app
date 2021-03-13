@@ -8,20 +8,12 @@ public class GUI {
     JFrame f;
     JTable j;
 
-    GUI() {
-        // Frame initiallization
+    GUI(String[][] data) {
         f = new JFrame();
-        // Frame Title
-        f.setTitle("JTable Example");
-
-        // Data to be displayed in the JTable
-        String[][] data = {
-                {"Kundan Kumar Jha", "4031", "CSE"},
-                {"Anand Jha", "6014", "IT"}
-        };
+        f.setTitle("StarWarsApp");
 
         // Column Names
-        String[] columnNames = {"Name", "Roll Number", "Department"};
+        String[] columnNames = {"Nombre", "Estatura", "Año de nacimiento"};
 
         // Initializing the JTable
         j = new JTable(data, columnNames);
@@ -31,13 +23,9 @@ public class GUI {
         JScrollPane sp = new JScrollPane(j);
         f.add(sp);
         // Frame Size
-        f.setSize(500, 200);
+        f.setSize(550, 230);
         // Frame Visible = true
         f.setVisible(true);
-    }
-
-    // Driver  method
-    public static void main(String[] args) {
-        new GUI();
+        Logger.INFO("EVERYTHING IS WORKING");
     }
 }
